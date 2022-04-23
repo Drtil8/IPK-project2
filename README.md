@@ -35,7 +35,7 @@ ipk-sniffer [-h | --help]
 
 Optional arguments can be arbitrarily combined.
 
-### Optinal arguments:
+### Optional arguments:
 
     -p <port_number>    Filter packets on the specific interface by port.
 
