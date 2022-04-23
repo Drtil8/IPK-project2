@@ -7,6 +7,7 @@ The network analyzer that is capable of capturing and filtering packets on a the
 ## Getting started
 
 Via makefile compile and build project.
+
 Write command "make", which creates executable file "ipk-sniffer".
 
 The program, sniffer, is executable either without inteface argument to list out all active intefaces
@@ -36,9 +37,10 @@ Optional arguments can be arbitrarily combined.
 
 **Optinal arguments:**
 
-    -p <port_number>
+    -p <port_number>    Filter packets on the specific interface by port.
 
-Filter packets on the specific interface by port. If this argument not set, all ports are considered.
+If this argument is not set, all ports are considered.
+
 If no argument for filtering tcp or udp is set, automaticaly filter packets both protocols tcp and upd.
 > :warning: **Port number has to be in interval <0, 2^16 - 1>, i.e. <0, 65535>.**
 
@@ -57,7 +59,8 @@ Whether any of optional arguments aren't set, sniffer capturing packets of all 4
 It can be set 1 or more protocol filters.
 
 
-**Examples:**
+### Examples:
+
 $ 1st example
 ```
 ./ipk-sniffer
