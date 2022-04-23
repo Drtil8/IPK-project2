@@ -36,15 +36,12 @@ Optional arguments can be arbitrarily combined.
 
 **Optinal arguments:**
 
-    -p <port_number>    Filter packets on the specific interface by port. 
+-p <port_number>    Filter packets on the specific interface by port. 
+                    If this argument not set, all ports are considered.
+                    If no argument for filtering tcp or udp is set, 
+                    automaticaly filter packets both protocols tcp and upd.
 
-                        If this argument not set, all ports are considered.
-
-                        If no argument for filtering tcp or udp is set, 
-
-                        automaticaly filter packets both protocols tcp and upd.
-
-    > :warning: **Port number has to be in interval <0, 2^16 - 1>, i.e. <0, 65535>.**
+> :warning: **Port number has to be in interval <0, 2^16 - 1>, i.e. <0, 65535>.**
 
     -n <packet_number>  Display only given number of packets.
 
