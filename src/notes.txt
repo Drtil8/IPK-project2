@@ -1,0 +1,87 @@
+-------------------------------------------------------------------------------------
+RM OSI model
+layer 4 - transportni - TCP, UPD=datagram
+layer 3 - sitova - ICMP, ARP, ((IPv4, IPv6) zapouzdruji data pro TCP nebo UPD)
+layer 2 - linkova - pouze Ethernet (EN10MB)
+ethernet frame - header (dst MAC, src MAC, ethertype=packet_type), data (packet), CRC Checksum
+frame odchytime packet snifferem, z nej zjistime MAC adresy, typ packetu a data=cely_packet
+packet parsneme o jaky protokol z 3 vrstvy se jedna, pokud jde o IPv4 nebo IPv6, tak znovu rozbalime a ziskame segment (4. vrstva)
+a vypiseme TCP a UPD informace
+na zaver vypiseme informace z framu
+offset_vypsanych_bajtu, data, se vypisuje jako pomoci funkce hexdump v linuxu
+
+
+-------------------------------------------------------------------------------------
+Hlavicky / kody v jednotlivych hlavickach:
+Ethernet frame - ethertype code for each protocol:
+     - IPv4 = 0x0800 () -> musi asi se rozbalit a zjistit a zkontrolovat, o jakou verzi se jedna
+     - IPv6 = 0x86DD ()
+     - ARP  = 0x0806 (2054)
+IP protocol number:
+     - ICMP = 0x01 (1)
+     - IPv6-ICMP = 0x3A (58) 
+     - TCP = 0x06 (6)
+     - UDP = 0x11 (17)
+
+ARP  - atribut operation, 1 for request, 2 for reply
+     - sender hardware address - src MAC
+     - sender protocol address - src IP
+     - target hardware address - dst MAC
+     - target protocol address - dst IP
+     - nepouziva porty
+IPv4 - pozor ma promennou delku
+     - IHL neni v bytech ale musi se vynasobit x4, abychom to meli v Bytech
+IPv6 - ma fixni header lenght, proto tu neni tu IHL
+     - 
+ICMP - skoro stejne jako IP header, ale navic ma type a nejake navic informace
+     - nepouziva porty
+TCP  - src port, dst port, acknowleadgement number 
+     - data offset je dulezity udaj - vynasobime opet x4 a zjistime delku headeru
+UDP  - src port, dst port
+     - header ma vzdy 8 byte
+
+
+-------------------------------------------------------------------------------------
+Funkce v c:
+- bitset - pro debuging, na vypisovani bitu, std::bitset x(a), std::cout << x << std::endl; (zjistit, zda jde pouzit v c)
+- ntohs / ntohl - !pouziva se na kazde 16bit a 32bit slova v headeru, konvertuje je z bigEndian na littleEndian, ma se pouzivat skoro vsude (i u ethertype)
+
+- pcap_open_live() vraci handle na interface, pro cteni
+- pcap_datalink(interface_handle, DLT_EN10MB) zjisti protokol
+- pcap_close() pro zavreni handle na interface, napr. pri ctrl+c a nebo po precteni vsech potrebnych dat
+
+Filtrovani:
+- filtrovani pomoci vyrazu:
+- napr. "icmp or (tcp and port 80)" - zalezi na vstupnich parametrech
+- pcap_compile() overi zda je filtrovaci vyraz syntakticky spravne
+- pcap_setfilter() pouzije se handle, pri chybe se konci
+- pcap_geterr() vrati errorovou hlasku posledniho prikazu (asi je tam static buffer)
+
+- inet_ntop(IPv4, IPv6) prevede zadanou ip adresu na lepsi format, musi se teto funkci predat spravnou delku bufferu
+- pro vypis MAC address - do print dat "%2x", aby se vypsali spravne
+- format vystupu: hex()
+
+- struct pcap_pkthdr - urcuje timestamp, kdy se odeslal frame (na stdout se vypisuje tento timestamp v RFC formatu, muze byt i v mikrosekundach)
+- bpf_u_int32_caplen - urcuje delka framu v Bytech
+-                    - header se musi vypisovat od zacatku po caplen
+- 
+- pcap_next(timeout) pocka timeout a vrati 1 packet
+
+Typecasting hlavicek
+- pouzivat struktury pro urcite headery:
+- ether_header
+- ether_arp
+- ip      (pro IPv4) - pozor nema fixni delku
+- ip6_hdr
+- icmphdr
+- tcphdr - pozor nema fixni delku
+- udp
+
+
+-------------------------------------------------------------------------------------
+Testovani:
+- arp, ip protokoly - posleme nejaky curl request
+- icmp - posleme ping
+- nasledne porovnavat vystup naseho packet snifferu s tim, co zachytil wireshark
+
+- pro ipv6 - pomoci curl6 2001:4860:4860::8888, zjistit jestli se spravne vypise google_ipv6 adresa

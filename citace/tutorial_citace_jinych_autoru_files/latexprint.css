@@ -1,0 +1,97 @@
+/*
+ * Autor: David Martinek (c) 2004
+ */
+
+/* Nastavení vlastností celé stránky. */
+.page {
+  color: black;
+  background-color: white;
+  font-family: serif;
+  margin:0px;
+}
+
+/* Nadpis stránky. */
+.dochead {
+  font-family: serif;
+  border-top: thin solid;
+  border-bottom: thin solid;
+  color: black;
+  background-color: #50FF95; /* #00FF90 */
+}
+
+.dochead H1 {
+  margin-top: 0.5ex; 
+  margin-bottom: 0.5ex;
+  text-align:center; 
+}
+
+/* Lokální menu stránky, slou¾í jenom k odstranìní menu v re¾imu tisku. */
+.topic { 
+  display: none; 
+}
+
+/* Copyright a vlajeèka v pravém horním rohu. */
+.copyright { 
+  position: absolute; 
+  right: 10px; 
+  top: 5px;
+  font-size: 6px;
+  text-align: right;
+}
+
+/* Levé menu. */
+.menu { 
+  display: none; 
+  color: black;
+  background-color: blue; /* jenom aby to ¹lo pøi tisku vidìt, kdyby bylo nìco ¹patnì */
+}
+
+/* Polo¾ky menu; pøi tisku stejnì nejsou vidìt. */
+.item {}
+.topitem {}
+.tip {}
+
+/* Obsah stránky. */
+.contents {
+  width: 100%;
+  float: right;
+  padding: 0px; 
+  margin-left: 0px; 
+  margin-right: 0px;
+  margin-top: 0.5em;
+  font-family: serif; 
+}
+
+/* Odstavec s prvním øádkem odsazeným. */
+.par {
+  text-indent: 1em;
+  text-align: justify;
+}
+
+/* Odstavec za nadpisem bez odsazení. */
+P {
+  text-align: justify;
+}
+
+
+/* Odstavec s ukázkou kódu. */
+.example {
+  color: black;
+  background-color: #DDDDDD;
+  padding-left: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  font-family: monospace;
+}
+
+/* Barevnì odli¹ený øádek tabulky. */
+.colorrow {
+  color: black;
+  background-color: #50FF95
+}
+
+/* Odkazy v ti¹tìném textu nemusí mít ¾ádné speciality. */
+A {
+  color: blue; 
+  text-decoration: underline;  
+}

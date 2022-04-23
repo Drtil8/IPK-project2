@@ -1,0 +1,159 @@
+/*
+ * Autor: David Martinek (c) 2004
+ */
+
+/* Nastavení vlastností celé stránky. */
+/* .page { */
+BODY {
+  min-width: 54em;  /* zajistí, ¾e stránka nebude nikdy u¾¹í ne¾ 54 em */
+  color: black;
+  background-color: white;
+  font-family:sans-serif;
+  margin:0px;
+}
+
+/* Nadpis stránky. */
+.dochead {
+  font-family: sans-serif;
+  border-top: thin solid;
+  border-bottom: thin solid;
+  color: black;
+  background-color: #EDDD8E; /* #ACCE8B; #A4C67B;  #50FF95; #00FF90 */
+}
+
+.dochead H1 {
+  margin-top:0.5ex; 
+  margin-bottom:0.5ex;
+  text-align:center; 
+}
+
+/* Lokální menu stránky, slou¾í jenom k odstranìní menu v re¾imu tisku. */
+.topic {}
+
+/* Copyright a vlajeèka v pravém horním rohu. */
+.copyright { 
+  position: absolute; 
+  right: 10px; 
+  top: 5px;
+  font-size: 6px;
+  text-align: right;
+}
+
+/* Levé menu. */
+.menu { 
+/*   position: relative;  */
+  float:left;
+/*   left: 0px; */
+  width: 10em;
+  /*height: 200em;*/
+  border-right: thin solid black;
+  color: black;
+  background-color: #F5F5C2;/* #D7E4E9; #e9e9ff;*/
+  font-family: sans-serif;
+  font-size: large;
+  font-variant: small-caps;
+  padding-top: 0.5em; /*padding-left:0.5em; padding-right:0.5em;*/
+  margin-top: 0px;
+  margin-left: 0em;
+  margin-right: 1.3em;
+  margin-bottom: 0.5em;
+  border-right-width:thin;
+  border-right-style:solid;
+  border-bottom-width:thin;
+  border-bottom-style:solid;
+
+}
+
+.menu A:link    { color: #4E4E4E; text-decoration: none;  }
+.menu A:visited { color: gray; text-decoration: none;  }
+.menu A:active  { color: yellow; text-decoration: none; }
+.menu A:hover   { color: yellow; text-decoration: none; background-color: blue; }
+
+/* Odstaveèek v menu s tipem, jak tisknout. */
+.tip {
+  font-size: x-small; 
+  font-variant: normal; 
+  padding-left: 1.5em; 
+  padding-right: 1.5em; 
+  padding-top: 3em; 
+  text-align: justify;
+}
+
+/* Polo¾ka menu s odkazem. */
+.item {
+  padding-left: 0.5em; 
+  padding-right: 0.5em; 
+  padding-top: 0.2em; 
+  padding-bottom: 0.2em;
+}
+
+/* Pøe¹krtnutá polo¾ka menu s odkazem. */
+.itemlt {
+  text-decoration:line-through;
+  padding-left: 0.5em; 
+  padding-right: 0.5em; 
+  padding-top: 0.2em; 
+  padding-bottom: 0.2em;
+}
+
+/* Polo¾ka menu ve funkci nadpisu. */
+.topitem {
+  color: black;
+  background-color: #BCE198; 
+  text-align:center;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/* Obsah stránky. */
+.contents { 
+/*   position:relative; */
+/*   float:right; */
+/*   clear:both; */
+  
+/*   left:12em; */
+  min-width: 40em; 
+  margin: 0em;
+  padding: 1em;
+  font-family:sans-serif;
+  border-left-width:thin;
+  border-left-style:solid;
+  background-color:#ffffdd;
+}
+
+/* Odstavec s prvním øádkem odsazeným. */
+/*.par {
+  text-indent: 1em;
+  text-align: justify;
+}*/
+
+P + P {
+  text-indent: 1em;
+  text-align: justify;
+}
+
+
+P {
+  text-align: justify;
+}
+
+
+/* Odstavec s ukázkou kódu. */
+.example { 
+  color: black;
+  background-color: #DDDDDD;
+  padding-left: 1em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  font-family: monospace;
+}
+
+/* Barevnì odli¹ený øádek tabulky. */
+.colorrow {
+  color: black;
+  background-color: #BCE198; /*#A4C67B ; #50FF95*/
+}
+
+A:link    { color: blue; text-decoration: underline;  }
+A:visited { color: gray; text-decoration: underline;  }
+A:active  { color: yellow; text-decoration: underline; }
+A:hover   { color: yellow; text-decoration: underline; background-color: blue; }

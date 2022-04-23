@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "udp.h": "c",
+        "stdlib.h": "c",
+        "ip_icmp.h": "c",
+        "signal.h": "c",
+        "stdint.h": "c",
+        "in.h": "c"
+    }
+}

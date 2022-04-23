@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0054)http://www.fit.vutbr.cz/~martinek/latex/citace.html.cs -->
+<html class=" nuwajn idc0_338"><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
+  <title>Jak citovat jiné autory</title>
+  
+  <meta name="GENERATOR" content="Quanta Plus">
+  <meta name="AUTHOR" content="David Martinek">
+  <meta name="KEYWORDS" content="LaTeX, BibTeX, bibliografické citace">
+  <link rel="StyleSheet" type="text/css" href="./tutorial_citace_jinych_autoru_files/latex.css" media="screen">
+  <link rel="StyleSheet" type="text/css" href="./tutorial_citace_jinych_autoru_files/latexprint.css" media="print">
+</head>
+
+<body class="page">
+
+<div class="copyright">
+  &#169; 2005 damig<br>
+</div>
+
+<div class="dochead">
+  <h1>Jak citovat jiné autory</h1>
+</div>
+
+<!-- begin include -->
+<div class="menu">
+  <div class="topitem">LaTeXové speciality</div>
+  <div class="item"><a href="http://www.fit.vutbr.cz/~martinek/welcome.html.cs">Autor</a></div>
+  <div class="item"><a href="http://www.fit.vutbr.cz/~martinek/latex/contents.html.cs">Obsah</a></div>
+  <hr>
+  <div class="item"><a href="http://www.fit.vutbr.cz/~martinek/latex/index.html.cs">Úvod</a></div>
+  <div class="item"><a href="http://www.fit.vutbr.cz/~martinek/latex/changes.html.cs">Novinky</a></div>
+  <div class="item"><a href="http://perchta.fit.vutbr.cz:8000/DavidMartinek/LaTeX">Vaše připomínky</a></div>
+  <hr>
+  <div class="topitem">Obecně</div>
+  <div class="item"><a href="http://www.fit.vutbr.cz/~martinek/latex/links.html.cs">Internetové zdroje</a></div>
+  <div class="item"><a href="http://www.fit.vutbr.cz/~martinek/latex/control.html.cs">Ovládání LaTeXu</a></div>
+  <div class="item"><a href="http://www.fit.vutbr.cz/~martinek/latex/editors.html.cs">Editory, nástroje</a></div>
+  <hr>
+  <div class="topitem">Návody jak...</div>
+  <div class="item"><a href="http://www.fit.vutbr.cz/~martinek/latex/czech.html.cs">sázet česky</a></div>
+  <div class="item"><a href="http://www.fit.vutbr.cz/~martinek/latex/fonts.html.cs">používat fonty</a></div>
+  <div class="item"><a href="http://www.fit.vutbr.cz/~martinek/latex/borders.html.cs">nastavit okraje</a></div>
+  <div class="item"><a href="http://www.fit.vutbr.cz/~martinek/latex/pagenum.html.cs">číslovat stránky</a></div>
+  <div class="item"><a href="http://www.fit.vutbr.cz/~martinek/latex/pdf.html.cs">vytvářet PDF</a></div>
+  <div class="item"><a href="http://www.fit.vutbr.cz/~martinek/latex/figures.html.cs">vkládat obrázky</a></div>
+  <div class="item"><a href="http://www.fit.vutbr.cz/~martinek/latex/ref.html.cs">vytvářet odkazy</a></div>
+  <div class="item"><a href="http://www.fit.vutbr.cz/~martinek/latex/citace.html.cs">citovat jiné autory</a></div>
+  <div class="item"><a href="http://www.fit.vutbr.cz/~martinek/latex/bibtex.html.cs">používat BibTeX</a></div>
+   <div class="item"><a href="http://www.fit.vutbr.cz/~martinek/latex/czechiso.html.cs">skloubit češtinu a BibTeX</a></div>
+<!--   <div class="item"><a href=".html">vytvářet seznamy a definice</a></div> -->
+  <hr>
+  <div class="topitem">Kouzla s&nbsp;postscriptem</div>
+  <div class="item"><a href="http://www.fit.vutbr.cz/~martinek/latex/duplex.html.cs">Oboustranný tisk</a></div>
+  <div class="item"><a href="http://www.fit.vutbr.cz/~martinek/latex/book.html.cs">Knižní vazba</a></div>
+<!--   <div class="item"><a href=".html"></a></div> -->
+
+<!--  <div class="item"><a href="todo.html">Co je v plánu</a></div>-->
+
+  <div class="tip">
+    <b>Tip:</b> Všechny zdejší stránky můžete vytisknout z vašeho prohlížeče běžným způsobem. Jejich formátování se automaticky upraví pro potřeby tisku.
+  </div>
+  <br><br>
+  <div align="center"><a href="http://validator.w3.org/check?uri=referer"><img border="0" src="./tutorial_citace_jinych_autoru_files/valid-html401" alt="Valid HTML 4.01!" height="31" width="88"></a><br><a href="http://jigsaw.w3.org/css-validator/"><img style="border:0;width:88px;height:31px" src="./tutorial_citace_jinych_autoru_files/vcss" alt="Valid CSS!"></a></div>
+
+  <div align="center"><img src="./tutorial_citace_jinych_autoru_files/code-latex.png" alt="Data Matrix" width="120" height="120" align="top" border="0"></div>
+</div>
+<!-- end  -->
+
+<div class="contents">
+  <!-- Obsah stránky -->
+  <div class="topic">
+  [ <a href="http://www.fit.vutbr.cz/~martinek/latex/citace.html.cs#01">&nbsp;Co jsou citace&nbsp;</a> |
+    <a href="http://www.fit.vutbr.cz/~martinek/latex/citace.html.cs#02">&nbsp;Proč citace používat&nbsp;</a> |
+    <a href="http://www.fit.vutbr.cz/~martinek/latex/citace.html.cs#03">&nbsp;Formát položky v seznamu literatury&nbsp;</a> |
+    <a href="http://www.fit.vutbr.cz/~martinek/latex/citace.html.cs#04">&nbsp;Citace v LaTeXu&nbsp;</a> |
+    <a href="http://www.fit.vutbr.cz/~martinek/latex/citace.html.cs#05">&nbsp;Seznam literatury pomocí (<tt>thebibliography</tt>)&nbsp;</a> |
+    <a href="http://www.fit.vutbr.cz/~martinek/latex/citace.html.cs#06">&nbsp;Použití BibTeXu&nbsp;</a> ]
+  </div>
+
+  <a name="01"></a>
+  <h3>Co jsou citace</h3>
+  <p>
+    Citace lze najít velice často v odborných textech. Jde o odkazy na použitou literaturu, kdy seznam literatury bývá umístěn na konci článku, kapitoly nebo celé knihy. Jednotlivé položky v seznamu literatury bývají opatřeny značkami, které se pak používají v textu jako odkazy. Tyto značky mohou mít různý tvar, ale je zvykem je vždy uzavírat do hranatých závorek.
+  </p>
+  <p>
+    Nejčastěji se lze setkat se dvěma typy těchto značek. První typ je tvořen jednoduše pořadovým číslem odkazu v seznamu literatury a odkazy pak vypadají takto: [1], nebo pokud chceme odkazovat na více zdrojů zároveň, tak takto: [3, 5, 10]. Druhý nejčastější typ je tvořen prvními znaky autorova jména a rokem, kdy byla odkazovaná publikace zveřejněna: [Mar98]. Více zdrojů odkazovaných zároveň lze opět oddělit čárkou: [Chom52, Tur45].
+  </p>
+  <table align="center">
+  <tbody>
+    <tr align="center">
+      <td><img src="./tutorial_citace_jinych_autoru_files/citace1.png" alt="Značka tvořená pořadovým číslem." width="682" height="22" align="middle" border="1"></td>
+    </tr>
+    <tr align="center">
+      <td>Obrázek 1: Záznam v seznamu literatury se značkou tvořenou pořadovým číslem.</td>
+    </tr>
+  </tbody>
+  </table>
+  
+  <table align="center">
+  <tbody>
+    <tr align="center">
+      <td><img src="./tutorial_citace_jinych_autoru_files/citace2.png" alt="Značka tvořená jménem autora a rokem vydání." width="716" height="45" align="middle" border="1"></td>
+    </tr>
+    <tr align="center">
+      <td>Obrázek 2: Záznam v seznamu literatury se značkou tvořenou jménem autora a rokem vydání.</td>
+    </tr>
+  </tbody>
+  </table>
+
+  <a name="02"></a>
+  <h3>Proč citace používat</h3>
+  <p>
+    Před tím, než se začneme zabývat tím, jak v dokumentu správně citovat jiné autory, bychom se měli zamyslet nad otázkou proč bychom to vůbec měli dělat. Pokud píšete nějaký text a necitujete žádné jiné autory, znamená to, že jde o vaše vlastní autorské dílo, které jste od a do z vymysleli sami. U technických a vědeckých textů je něco takového téměř vyloučeno a dokument bez citací pak lze interpretovat různými způsoby:
+  </p>
+  <ol type="a">
+    <li>Při tvorbě svého díla jste žádnou literaturu opravdu nepoužili. To znamená, že jste se ani nepokoušeli zjistit, zda něco podobného jako vy už neřešil někdo jiný před vámi.</li>
+    <li>Nevíte, jak citovat jiné autory.</li>
+    <li>Literaturu jste používali, ale chcete zakrýt skutečnost, že stejnou práci jako vy už uveřejnil někdo jiný, nebo skutečnost, že jste části své práce opsali. </li>
+  </ol>
+  <p> 
+    Kterákoli ze zmíněných možností je velmi špatnou vizitkou. Poslední možnost, tedy převzetí cizího textu bez zmínky o původním autorovi je považována za obzvláště podlý čin. Při hodnocení bakalářských a diplomových prací, ale také článků na vědeckých konferencích je úroveň citací použitých v dokumentu součástí hodnocení a práce bez citací nebo chybně citující použitou literaturu mohou být dokonce odmítnuty.
+  </p>
+
+  <h4>Poznámka k přebírání cizích textů</h4>
+  <p>
+    V drtivé většině případů se nepovažuje za přípustné používat přejaté texty. Téměř vždy je lepší danou problematiku popsat vlastními slovy a uvést odkaz na použitou literaturu. Ve výjimečných případech lze doslovně citovat cizí myšlenku, ale nemělo by jít o text delší než zhruba odstavec. V takových případech se pro sazbu používá speciální oboustranně odsazený odstavec. V blízkém okolí tohoto odstavce by se měl nacházet odkaz na zdroj, aby bylo zřejmé, koho a co citujete.
+  </p>
+
+  <p>
+    Pro tyto příležitosti v LaTeXu existují dvě prostředí - <tt>quote</tt> a <tt>quotation</tt>. Tato prostředí se liší jen tím, že prostředí <tt>quotation</tt> odsazuje první řádek odstavce. Hodí se tedy pro použití za libovolným odstavcem. Prostředí <tt>quote</tt> se hodí, pokud je použito za nadpisem.
+  </p>
+
+  <p>
+    Osobně jsem však tuto konstrukci nikdy nepotřeboval ani nepoužil.
+  </p>
+
+  <a name="03"></a>
+  <h3>Formát položky v seznamu literatury</h3>
+  <p>
+    Tvar položek v seznamu literatury je normován. Podle české normy by měla položka seznamu obsahovat minimálně tyto informace:
+  </p>
+  <table>
+    <tbody>
+      <tr>
+        <td valign="top">[návěští]</td>
+        <td valign="top">J. Autor, S. D. Spoluautor: <em>Název publikace</em>. Místo vydání, Vydavatelství, Rok vydání.</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Jména autorů se většinou sází bez titulů, jen počáteční písmena jmen, celá se sází jen příjmení. Název publikace je vhodné zvýraznit. Pokud chcete čtenářům usnadnit vyhledávání, je dobré přidat na konec ještě <abbr title="International Standard Book Number"> ISBN</abbr>. To je číselný kód, který najdete v tiráži (a většinou i na zadní straně) každé tištěné knihy. U periodik lze v tiráži najít kód se zkratkou <abbr title="International Standard Serial Number">ISSN</abbr>. Podle těchto jedinečných kódů se pak publikace snadno vyhledává buď na internetu nebo v knihovně.
+  </p>
+  <p>
+    U článků se ještě uvádí název sborníku nebo časopisu, kde byl tento článek uveřejněn a čísla stránek, kde se článek nachází. U některých publikací, pokud je to potřeba, se ještě přidávají další údaje jako název kapitoly, jméno editora, URL adresa (+ měsíc a rok poslední kontroly, že je zmiňovaný odkaz živý), a jiné. Základní informace by však, pokud jsou k dispozici, nikdy chybět neměly.
+  </p>
+
+  <a name="04"></a>
+  <h3>Citace v LaTeXu</h3>
+  <p>
+    Práce s citacemi v LaTeXu se skládá ze dvou kroků - vytvoření seznamu použité literatury a vložení odkazů na ně do textu. Možností, jak vytvořit seznam literatury je více, ale vždy platí, že je potřeba každou položku seznamu opatřit návěštím (label). Pomocí tohoto návěští pak budeme v textu odkazovat na jednotlivé položky seznamu (podobně jako se odkazuje na obrázky a kapitoly pomocí <tt>\ref{}</tt>). Pro odkazování se používá příkaz <tt>\cite{label}</tt>. Pokud je potřeba odkazovat na více zdrojů zároveň, stačí do složených závorek umístit seznam identifikátorů oddělený čárkami: <tt>\cite{label1, label2, label3}</tt>. V místě použití se pak tento příkaz nahradí odkazem v hranatých závorkách, například \cite{ceska} se nahradí za [Češ94]. Odkazy lze upřesnit pomocí nepovinného parametru: \cite[str. 35]{ceska} zobrazí [Češ94, str. 35].
+  </p>
+  <p>
+    LaTeX standardně tiskne pouze ty položky seznamu, které jsou v textu citovány. Pokud je potřeba mít v seznamu literatury i položky, které citovány nejsou, lze použít příkaz <tt>\nocite{seznam}</tt>. Jeho parametrem je seznam návěští. Tento příkaz v textu nic nevygeneruje, takže jej lze použít kdekoli. Příhodné místo je například těsně před vlastním seznamem literatury.
+  </p>
+
+  <a name="05"></a>
+  <h3>Seznam literatury pomocí (<tt>thebibliography</tt>)</h3>
+  <p>
+    Prvním způsobem, jak vytvořit seznam literatury je použít prostředí <tt>thebibliography</tt>. Do tohoto prostředí je pak nutné vepsat seznam včetně specifikace příslušných návěští. Návěští se specifikují pomocí příkazu <tt>\bibitem[text-návěští]{návěští}</tt>.
+  </p>
+<pre class="example">\begin{thebibliography}{Per00}
+  \bibitem[Češ94]{ceska} M. Češka:
+    \emph{Petriho sítě}. Akademické nakladatelství CERM,
+    Brno, 1994. ISBN 80-85867-35-4.
+  \bibitem[Per00]{homesim} P. Peringer:
+    \emph{SIMLIB home page}. (leden 2000).\\
+    \verb|http://www.fee.vutbr.cz/~peringer/SIMLIB/|
+\end{thebibliography}
+</pre>
+  <p>
+    Parametr prostředí <tt>thebibliography</tt> je text svou délkou odpovídající nejdelšímu návěští. Slouží LaTeXu ke správnému odsazování údajů. První parametr příkazu <tt>\bibitem</tt> je nepovinný. Přesně toto se vysází jako návěští v dokumentu. Pokud tento parametr není použit bude LaTeX jako návěští používat obyčejné arabské číslice. Druhým parametrem je návěští, které se bude používat při odkazování pomocí příkazu <tt>\cite</tt>. Toto návěští slouží jen pro autora LaTeXového dokumentu.
+  </p>
+  <p>
+    Tento způsob tvorby seznamů literatury se hodí pouze na malé seznamy, u nichž nebude potřeba měnit formátování.
+  </p>
+
+  <a name="06"></a>
+  <h3>Použití BibTeXu</h3>
+  <p>
+    Předchozí způsob vytváření seznamu literatury je univerzální, protože si vystačíme pouze se samotným LaTeXem, ale dle mého názoru je to způsob pracný a málo pružný. Takovýto seznam se velmi těžko spravuje, zvláště jestliže je potřeba měnit formátování (například v zahraničních publikacích mohou vyžadovat jiný způsob formátování údajů než u nás). Pokud máte v zásobě větší množství literatury, na kterou chcete ve svých článcích odkazovat, je výhodné mít seznam oddělený od vlastního dokumentu, respektive způsobu zobrazení. Nástroj, který toto umožňuje se nazývá BibTeX. Tomuto systému se věnuji podrobněji v <a href="http://www.fit.vutbr.cz/~martinek/latex/bibtex.html.cs">následující kapitole</a>.
+  </p>
+
+  <hr>
+  <p>
+    Autor: <a href="http://www.fit.vutbr.cz/~martinek.cs">David Martinek</a>. Poslední modifikace: <!-- begin flastmod -->
+24. February 2008<!-- end -->. Pokud v tomto dokumentu narazíte na chybu, dejte mi prosím vědět.
+  </p>
+
+</div>
+
+
+</body></html>
