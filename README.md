@@ -35,7 +35,9 @@ ipk-sniffer [-h | --help]
 Optional arguments can be arbitrarily combined.
 
 **Optinal arguments:**
+
     -p <port_number>
+
 Filter packets on the specific interface by port. If this argument not set, all ports are considered.
 If no argument for filtering tcp or udp is set, automaticaly filter packets both protocols tcp and upd.
 > :warning: **Port number has to be in interval <0, 2^16 - 1>, i.e. <0, 65535>.**
@@ -44,6 +46,7 @@ If no argument for filtering tcp or udp is set, automaticaly filter packets both
 > :warning: **Number of packet has to be higher than 1.**
 
 **Filters:**
+
     --tcp | -t          Display only TCP packets.
     --udp | -u          Display only UDP packets.
     --arp               Display only ARP frames.
