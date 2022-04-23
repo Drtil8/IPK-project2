@@ -35,7 +35,7 @@ ipk-sniffer [-h | --help]
 
 Optional arguments can be arbitrarily combined.
 
-**Optinal arguments:**
+### Optinal arguments:
 
     -p <port_number>    Filter packets on the specific interface by port.
 
@@ -43,11 +43,13 @@ Optional arguments can be arbitrarily combined.
 
                         If no argument for filtering tcp or udp is set, 
 
-			automaticaly filter packets both protocols tcp and upd.
+                        automaticaly filter packets both protocols tcp and upd.
 
 > :warning: **Port number has to be in interval <0, 2^16 - 1>, i.e. <0, 65535>.**
 
-    -n <packet_number>  Display only given number of packets.
+    -n <packet_number>  Display only given number of packets. 
+
+                        Implicitly is set to show only one packet.
 > :warning: **Number of packet has to be higher than 1.**
 
 **Filters:**
@@ -71,12 +73,17 @@ $ 1st example
 
 $ 2nd example
 ```
-./ipk-sniffer -i ens33 --icmp
+./ipk-sniffer -i ens33 --arp
 ```
 
 $ 3rd example
 ```
-./ipk-sniffer -i lo --tcp --udp
+./ipk-sniffer -i lo -p 45901 --tcp --udp
+```
+
+$ 4th example
+```
+./ipk-sniffer -i lo -n 10 --icmp
 ```
 
 ---
